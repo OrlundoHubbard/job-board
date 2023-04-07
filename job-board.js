@@ -32,3 +32,16 @@ jobForm.addEventListener('submit', (event) => {
 });
 
 // Function to render the list of jobs
+function renderJobs() {
+    // Clear the job list
+    jobList.innerHTML = '';
+
+    // Loop through the jobs and add them to the list
+    jobs.forEach((job) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+        <h2>${job.title}</h2>
+        <p><em>${job.company}</em></p>`;
+        jobList.appendChild(li);
+    });
+}
